@@ -41,14 +41,22 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUw-DT-KYe">
-                        <rect key="frame" x="244" y="24" width="46" height="30"/>
+                        <rect key="frame" x="236" y="24" width="62" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
+                        <state key="normal" title="Direction"/>
+                        <connections>
+                            <action selector="directionButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Vtn-ee-K8T"/>
+                        </connections>
                     </button>
                 </subviews>
             </tableViewCellContentView>
             <accessibility key="accessibilityConfiguration" identifier="BuildingCell"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="libraryName" destination="eyI-A6-bpf" id="GVf-mG-nGH"/>
+                <outlet property="walkingMeters" destination="xaH-v4-753" id="VGb-co-0zA"/>
+                <outlet property="walkingMinutes" destination="QEc-nM-3AJ" id="rWh-Au-x4h"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>
