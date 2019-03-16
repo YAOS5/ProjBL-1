@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
-
+import SwiftyJSON
 
 class customPin: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
@@ -27,7 +27,7 @@ class customPin: NSObject, MKAnnotation {
 class ViewController: UIViewController, MKMapViewDelegate{
     
     var coor: CLLocationCoordinate2D?
-
+    var json = JSON()
     
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var searchBar: UITextField!
@@ -144,9 +144,11 @@ extension ViewController {
 
 extension ViewController: CLLocationManagerDelegate {
     
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if locations[locations.count - 1].horizontalAccuracy >= 0 {
             coor = locations[locations.count - 1].coordinate
+            json = getJSON(lat: coor!.latitude, long: coor!.longitude)
             manager.stopUpdatingLocation()
         }
 //        manager.location?.coordinate
@@ -165,12 +167,15 @@ extension ViewController: CLLocationManagerDelegate {
 
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource, plotPloylineDelegate {
+    
+
+    
     func getInfoAndPlotPloyline(buildingName: String) {
         plotDirectionsTo(destName: buildingName, lat: coor!.latitude, long: coor!.longitude)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {   
-        return 3
+        return json["buildings"].count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -179,6 +184,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, plotPloyli
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "BuildingCell", for: indexPath) as! BuildingCell
+        cell.libraryName.text = json["buildings"][indexPath.row]["buildingName"].string
+        cell.walkingMeters.text = json["buildings"][indexPath.row]["distance"].string! + "m"
+        cell.walkingMinutes.text = json["buildings"][indexPath.row]["time"].string! + "min"
         cell.delegate = self
         return cell
     }
