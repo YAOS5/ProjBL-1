@@ -25,10 +25,10 @@
                                 </connections>
                             </mapView>
                             <tableView clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XoT-ik-OEi">
-                                <rect key="frame" x="0.0" y="596" width="414" height="300"/>
+                                <rect key="frame" x="0.0" y="576" width="414" height="320"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="hgD-KU-wlD"/>
+                                    <constraint firstAttribute="height" constant="320" id="hgD-KU-wlD"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="6FD-fn-Jvr"/>
@@ -36,17 +36,22 @@
                                 </connections>
                             </tableView>
                             <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QtQ-HJ-GaI">
-                                <rect key="frame" x="0.0" y="516" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="516" width="414" height="60"/>
                                 <subviews>
-                                    <textField opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pac-WK-Srj">
-                                        <rect key="frame" x="32" y="10" width="350" height="60"/>
+                                    <textField opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Search for places to study" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pac-WK-Srj">
+                                        <rect key="frame" x="32" y="10" width="350" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="D6J-mz-d3j"/>
+                                            <constraint firstAttribute="height" constant="40" id="D6J-mz-d3j"/>
                                             <constraint firstAttribute="width" constant="350" id="Q7b-bS-8L8"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="3yE-TR-rUG"/>
                                         </connections>
@@ -56,7 +61,7 @@
                                 <constraints>
                                     <constraint firstItem="Pac-WK-Srj" firstAttribute="centerX" secondItem="QtQ-HJ-GaI" secondAttribute="centerX" id="91v-mg-O7R"/>
                                     <constraint firstItem="Pac-WK-Srj" firstAttribute="centerY" secondItem="QtQ-HJ-GaI" secondAttribute="centerY" id="QZ8-AC-71Y"/>
-                                    <constraint firstAttribute="height" constant="80" id="Rar-qR-BKp"/>
+                                    <constraint firstAttribute="height" constant="60" id="Rar-qR-BKp"/>
                                 </constraints>
                             </view>
                         </subviews>

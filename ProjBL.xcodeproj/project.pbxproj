@@ -20,6 +20,7 @@
 		4981A6F1223D36B200A2DEE7 /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4981A6EF223D36B200A2DEE7 /* FilterCell.xib */; };
 		4981A6F3223D5A1200A2DEE7 /* jsonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981A6F2223D5A1100A2DEE7 /* jsonAPI.swift */; };
 		4981A6F5223D5DC100A2DEE7 /* retractKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981A6F4223D5DC000A2DEE7 /* retractKeyboard.swift */; };
+		4981A6F7223D695700A2DEE7 /* textFieldButtonAppearence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981A6F6223D695700A2DEE7 /* textFieldButtonAppearence.swift */; };
 		8242437FA395C1F0B688C532 /* Pods_ProjBL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7ACD51C1B42D2FD275B97C6 /* Pods_ProjBL.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		4981A6EF223D36B200A2DEE7 /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
 		4981A6F2223D5A1100A2DEE7 /* jsonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsonAPI.swift; sourceTree = "<group>"; };
 		4981A6F4223D5DC000A2DEE7 /* retractKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = retractKeyboard.swift; sourceTree = "<group>"; };
+		4981A6F6223D695700A2DEE7 /* textFieldButtonAppearence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textFieldButtonAppearence.swift; sourceTree = "<group>"; };
 		BEE276C22111445439076BC2 /* Pods-ProjBL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjBL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjBL/Pods-ProjBL.debug.xcconfig"; sourceTree = "<group>"; };
 		C7ACD51C1B42D2FD275B97C6 /* Pods_ProjBL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjBL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -86,6 +88,7 @@
 				4918FD0A223CE12A006FC76D /* Info.plist */,
 				4981A6F2223D5A1100A2DEE7 /* jsonAPI.swift */,
 				4981A6F4223D5DC000A2DEE7 /* retractKeyboard.swift */,
+				4981A6F6223D695700A2DEE7 /* textFieldButtonAppearence.swift */,
 			);
 			path = ProjBL;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				4918FD01223CE127006FC76D /* ViewController.swift in Sources */,
 				4918FD13223D0F9F006FC76D /* SearchCell.swift in Sources */,
 				4981A6F5223D5DC100A2DEE7 /* retractKeyboard.swift in Sources */,
+				4981A6F7223D695700A2DEE7 /* textFieldButtonAppearence.swift in Sources */,
 				4918FCFF223CE127006FC76D /* AppDelegate.swift in Sources */,
 				4918FD17223D1307006FC76D /* BuildingCell.swift in Sources */,
 				4981A6F3223D5A1200A2DEE7 /* jsonAPI.swift in Sources */,
