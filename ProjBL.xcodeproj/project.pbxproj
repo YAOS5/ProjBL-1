@@ -25,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4338B8C3223D6EA6003CDE10 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = "/Users/danielye/Documents/GitHub/ProjBL-1/ProjBL/fonts"; sourceTree = "<absolute>"; };
 		4918FCFB223CE127006FC76D /* ProjBL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjBL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4918FCFE223CE127006FC76D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4918FD00223CE127006FC76D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +90,7 @@
 				4981A6F2223D5A1100A2DEE7 /* jsonAPI.swift */,
 				4981A6F4223D5DC000A2DEE7 /* retractKeyboard.swift */,
 				4981A6F6223D695700A2DEE7 /* textFieldButtonAppearence.swift */,
+				4338B8C3223D6EA6003CDE10 /* fonts */,
 			);
 			path = ProjBL;
 			sourceTree = "<group>";
