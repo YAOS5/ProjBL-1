@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43693191223D7BDA0038B6DE /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4369318E223D7BDA0038B6DE /* SF-Pro-Text-Heavy.otf */; };
+		43693192223D7BDA0038B6DE /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4369318F223D7BDA0038B6DE /* SF-Pro-Display-Regular.otf */; };
+		43693193223D7BDA0038B6DE /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 43693190223D7BDA0038B6DE /* SF-Pro-Text-Bold.otf */; };
 		4918FCFF223CE127006FC76D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4918FCFE223CE127006FC76D /* AppDelegate.swift */; };
 		4918FD01223CE127006FC76D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4918FD00223CE127006FC76D /* ViewController.swift */; };
 		4918FD04223CE127006FC76D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4918FD02223CE127006FC76D /* Main.storyboard */; };
@@ -26,6 +29,9 @@
 
 /* Begin PBXFileReference section */
 		4338B8C3223D6EA6003CDE10 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = "/Users/danielye/Documents/GitHub/ProjBL-1/ProjBL/fonts"; sourceTree = "<absolute>"; };
+		4369318E223D7BDA0038B6DE /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
+		4369318F223D7BDA0038B6DE /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
+		43693190223D7BDA0038B6DE /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		4918FCFB223CE127006FC76D /* ProjBL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjBL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4918FCFE223CE127006FC76D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4918FD00223CE127006FC76D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,9 +65,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4369318D223D7BC00038B6DE /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4369318F223D7BDA0038B6DE /* SF-Pro-Display-Regular.otf */,
+				43693190223D7BDA0038B6DE /* SF-Pro-Text-Bold.otf */,
+				4369318E223D7BDA0038B6DE /* SF-Pro-Text-Heavy.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		4918FCF2223CE127006FC76D = {
 			isa = PBXGroup;
 			children = (
+				4369318D223D7BC00038B6DE /* fonts */,
 				4918FCFD223CE127006FC76D /* ProjBL */,
 				4918FD10223D0F7A006FC76D /* XIB cells */,
 				4918FCFC223CE127006FC76D /* Products */,
@@ -187,10 +204,13 @@
 			files = (
 				4918FD09223CE12A006FC76D /* LaunchScreen.storyboard in Resources */,
 				4918FD14223D0F9F006FC76D /* SearchCell.xib in Resources */,
+				43693192223D7BDA0038B6DE /* SF-Pro-Display-Regular.otf in Resources */,
 				4918FD06223CE12A006FC76D /* Assets.xcassets in Resources */,
+				43693191223D7BDA0038B6DE /* SF-Pro-Text-Heavy.otf in Resources */,
 				4981A6F1223D36B200A2DEE7 /* FilterCell.xib in Resources */,
 				4918FD18223D1307006FC76D /* BuildingCell.xib in Resources */,
 				4918FD04223CE127006FC76D /* Main.storyboard in Resources */,
+				43693193223D7BDA0038B6DE /* SF-Pro-Text-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
