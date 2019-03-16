@@ -16,6 +16,9 @@
 		4918FD14223D0F9F006FC76D /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4918FD12223D0F9F006FC76D /* SearchCell.xib */; };
 		4918FD17223D1307006FC76D /* BuildingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4918FD15223D1307006FC76D /* BuildingCell.swift */; };
 		4918FD18223D1307006FC76D /* BuildingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4918FD16223D1307006FC76D /* BuildingCell.xib */; };
+		4981A6F0223D36B200A2DEE7 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981A6EE223D36B200A2DEE7 /* FilterCell.swift */; };
+		4981A6F1223D36B200A2DEE7 /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4981A6EF223D36B200A2DEE7 /* FilterCell.xib */; };
+		4981A6F3223D5A1200A2DEE7 /* jsonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981A6F2223D5A1100A2DEE7 /* jsonAPI.swift */; };
 		8242437FA395C1F0B688C532 /* Pods_ProjBL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7ACD51C1B42D2FD275B97C6 /* Pods_ProjBL.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +35,9 @@
 		4918FD15223D1307006FC76D /* BuildingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingCell.swift; sourceTree = "<group>"; };
 		4918FD16223D1307006FC76D /* BuildingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuildingCell.xib; sourceTree = "<group>"; };
 		491C16B27CC911D6E039C8AE /* Pods-ProjBL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjBL.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjBL/Pods-ProjBL.release.xcconfig"; sourceTree = "<group>"; };
+		4981A6EE223D36B200A2DEE7 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		4981A6EF223D36B200A2DEE7 /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
+		4981A6F2223D5A1100A2DEE7 /* jsonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsonAPI.swift; sourceTree = "<group>"; };
 		BEE276C22111445439076BC2 /* Pods-ProjBL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjBL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjBL/Pods-ProjBL.debug.xcconfig"; sourceTree = "<group>"; };
 		C7ACD51C1B42D2FD275B97C6 /* Pods_ProjBL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjBL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -76,6 +82,7 @@
 				4918FD05223CE12A006FC76D /* Assets.xcassets */,
 				4918FD07223CE12A006FC76D /* LaunchScreen.storyboard */,
 				4918FD0A223CE12A006FC76D /* Info.plist */,
+				4981A6F2223D5A1100A2DEE7 /* jsonAPI.swift */,
 			);
 			path = ProjBL;
 			sourceTree = "<group>";
@@ -87,6 +94,8 @@
 				4918FD12223D0F9F006FC76D /* SearchCell.xib */,
 				4918FD15223D1307006FC76D /* BuildingCell.swift */,
 				4918FD16223D1307006FC76D /* BuildingCell.xib */,
+				4981A6EE223D36B200A2DEE7 /* FilterCell.swift */,
+				4981A6EF223D36B200A2DEE7 /* FilterCell.xib */,
 			);
 			path = "XIB cells";
 			sourceTree = "<group>";
@@ -171,6 +180,7 @@
 				4918FD09223CE12A006FC76D /* LaunchScreen.storyboard in Resources */,
 				4918FD14223D0F9F006FC76D /* SearchCell.xib in Resources */,
 				4918FD06223CE12A006FC76D /* Assets.xcassets in Resources */,
+				4981A6F1223D36B200A2DEE7 /* FilterCell.xib in Resources */,
 				4918FD18223D1307006FC76D /* BuildingCell.xib in Resources */,
 				4918FD04223CE127006FC76D /* Main.storyboard in Resources */,
 			);
@@ -236,6 +246,8 @@
 				4918FD13223D0F9F006FC76D /* SearchCell.swift in Sources */,
 				4918FCFF223CE127006FC76D /* AppDelegate.swift in Sources */,
 				4918FD17223D1307006FC76D /* BuildingCell.swift in Sources */,
+				4981A6F3223D5A1200A2DEE7 /* jsonAPI.swift in Sources */,
+				4981A6F0223D36B200A2DEE7 /* FilterCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

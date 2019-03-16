@@ -1,0 +1,71 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"description": "A representation of a top 3 buildings with at most 3 most available rooms each",
+	"type": "object",
+	"properties": {
+		"buildings": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"buildingName": {
+						"type": "string"
+					},
+					"busyness": {
+						"type": "number"
+					},
+					"distance": {
+						"type": "number"
+					},
+					"time": {
+						"type": "string"
+					},
+					"openingTime": {
+						"type": "string"
+					},
+					"closingTime": {
+						"type": "string"
+					},
+					"latitude": {
+						"type": "number"
+					},
+					"longitude": {
+						"type": "number"
+					},
+					"closeToCafe": {
+						"type": "boolean"
+					},
+					"hasVending": {
+						"type": "boolean"
+					},
+					"hasATM": {
+						"type": "boolean"
+					},
+					"hasMicrowave": {
+						"type": "boolean"
+					},
+					"hasPrinting": {
+						"type": "boolean"
+					},
+					"rooms": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"roomName": {
+									"type": "string"
+								},
+								"hasAV": {
+									"type": "boolean"
+								},
+								"hasComputers": {
+									"type": "boolean"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

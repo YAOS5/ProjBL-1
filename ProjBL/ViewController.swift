@@ -34,8 +34,14 @@ class ViewController: UIViewController, MKMapViewDelegate{
         
         let BuildingCell = UINib(nibName: "BuildingCell", bundle: nil)
         tableView.register(BuildingCell, forCellReuseIdentifier: "BuildingCell")
+        
+        let FilterCell = UINib(nibName: "FilterCell", bundle: nil)
+        tableView.register(FilterCell, forCellReuseIdentifier: "FilterCell")
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+////        tableView.cellForRow(at: [0, 0])!.isHidden = true
+//    }
 
 }
 
@@ -69,13 +75,17 @@ extension ViewController: CLLocationManagerDelegate {
 
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {   
         return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "BuildingCell", for: indexPath) as! BuildingCell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FilterCell", for: indexPath) as! FilterCell
             return cell
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BuildingCell", for: indexPath) as! BuildingCell
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -88,11 +98,13 @@ extension ViewController: UITextFieldDelegate {
         UIView.animate(withDuration: 0.5) {
             self.tableViewHeightConstraint.constant = 750
             self.view.layoutIfNeeded()
+            let filterCell = self.tableView.cellForRow(at: [0, 0])! as! FilterCell
+            filterCell.changeToFilter()
         }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        //
+        
     }
     
 }
