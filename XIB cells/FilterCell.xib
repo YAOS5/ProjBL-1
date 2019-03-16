@@ -23,6 +23,9 @@
                         <rect key="frame" x="147" y="11" width="30" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="cafe"/>
+                        <connections>
+                            <action selector="cafeButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hiT-Ko-bbH"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nearby" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNk-tz-iCD">
                         <rect key="frame" x="16" y="31" width="56" height="21"/>
@@ -35,6 +38,9 @@
                         <rect key="frame" x="147" y="43" width="66" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="computer"/>
+                        <connections>
+                            <action selector="computerButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eeq-ab-mB9"/>
+                        </connections>
                     </button>
                 </subviews>
             </tableViewCellContentView>

@@ -10,9 +10,25 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, MKMapViewDelegate{
 
-    @IBOutlet weak var mapView: MKMapView!
+class customPin: NSObject, MKAnnotation {
+    var coordinate: CLLocationCoordinate2D
+    var title: String?
+    var subtitle: String?
+    
+    init(pinTitle:String, pinSubTitle:String, location:CLLocationCoordinate2D) {
+        self.title = pinTitle
+        self.subtitle = pinSubTitle
+        self.coordinate = location
+    }
+}
+
+
+class ViewController: UIViewController, MKMapViewDelegate{
+    
+    
+    @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var searchBar: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     
@@ -21,12 +37,12 @@ class ViewController: UIViewController, MKMapViewDelegate{
     
     override func viewDidLoad() {
         locationManager.requestWhenInUseAuthorization()
-        checkLocationServices()
         super.viewDidLoad()
         
-        mapView.delegate = self
-        mapView.showsBuildings = true
-        mapView.showsUserLocation = true
+        map.delegate = self
+        map.showsBuildings = true
+        map.showsUserLocation = true
+        self.hideKeyboard()
         
         // Table View Cell config
         let SearchCell = UINib(nibName: "SearchCell", bundle: nil)
@@ -37,13 +53,68 @@ class ViewController: UIViewController, MKMapViewDelegate{
         
         let FilterCell = UINib(nibName: "FilterCell", bundle: nil)
         tableView.register(FilterCell, forCellReuseIdentifier: "FilterCell")
+        
+        
+        if CLLocationManager.locationServicesEnabled() {
+            setUpLocationManager()
+            setupMap()
+        }
+        if locationManager.location != nil {
+            plotDirectionsTo(destName: "Baillieu Library", lat: -37.798503, long: 144.959575)
+        }
+    }
+}
+
+
+extension ViewController {
+    func setupMap() {
+        map.delegate = self
+        map.showsBuildings = true
+        map.showsUserLocation = true
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-////        tableView.cellForRow(at: [0, 0])!.isHidden = true
-//    }
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        renderer.strokeColor = UIColor.purple
+        renderer.lineWidth = 5.0
+        return renderer
+    }
+    
+    func plotDirectionsTo(destName: String, lat: Double, long: Double) {
+        let sourceCoordinates = locationManager.location!.coordinate
+        let destinationCoordinates = CLLocationCoordinate2DMake(lat, long)
+        
+        let destinationPin = customPin(pinTitle: destName, pinSubTitle: "", location: destinationCoordinates)
+        self.map.addAnnotation(destinationPin)
+        
+        let sourcePlaceMark = MKPlacemark(coordinate: sourceCoordinates)
+        let destinationPlaceMark = MKPlacemark(coordinate: destinationCoordinates)
+        
+        let directionRequest = MKDirections.Request()
+        directionRequest.source = MKMapItem(placemark: sourcePlaceMark)
+        directionRequest.destination = MKMapItem(placemark: destinationPlaceMark)
+        directionRequest.transportType = .walking
+        
+        let directions = MKDirections(request: directionRequest)
+        directions.calculate { (response, error) in
+            guard let directionResponse = response else {
+                if let error = error {
+                    print("we have error getting directions==\(error.localizedDescription)")
+                }
+                return
+            }
+            
+            let route = directionResponse.routes[0]
+            
+            self.map.addOverlay(route.polyline, level: .aboveRoads)
+            
+            let rect = route.polyline.boundingMapRect
+            self.map.setRegion(MKCoordinateRegion(rect), animated: true)
+        }
+    }
 
 }
+
 
 
 
@@ -55,15 +126,6 @@ extension ViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         //
-    }
-    
-    func checkLocationServices() {
-        if CLLocationManager.locationServicesEnabled() {
-            setUpLocationManager()
-        }
-        else {
-            locationManager.requestWhenInUseAuthorization()
-        }
     }
     
     func setUpLocationManager() {
@@ -105,6 +167,11 @@ extension ViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchBar.resignFirstResponder()
+        return true
     }
     
 }

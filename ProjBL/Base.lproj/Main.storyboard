@@ -76,7 +76,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="oA6-iP-b7X" id="AR0-6R-BdI"/>
+                        <outlet property="map" destination="oA6-iP-b7X" id="oKG-b6-KFQ"/>
+                        <outlet property="searchBar" destination="Pac-WK-Srj" id="eEA-fh-M1r"/>
                         <outlet property="tableView" destination="XoT-ik-OEi" id="YZg-HX-9rf"/>
                         <outlet property="tableViewHeightConstraint" destination="hgD-KU-wlD" id="Gi9-O1-l7r"/>
                     </connections>

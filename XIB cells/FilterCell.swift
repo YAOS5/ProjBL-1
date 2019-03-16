@@ -34,4 +34,14 @@ class FilterCell: UITableViewCell {
         mainLabel.text = "Filter"
     }
     
+    
+    
+    @IBAction func cafeButtonPressed(_ sender: UIButton) {
+        cafeButton.isHighlighted = true
+    }
+    
+    @IBAction func computerButton(_ sender: UIButton) {
+        computerButton.isHighlighted = true
+    }
+    
 }
