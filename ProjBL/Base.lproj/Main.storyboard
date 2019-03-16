@@ -35,10 +35,10 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="UIs-1A-n9I"/>
                                 </connections>
                             </tableView>
-                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QtQ-HJ-GaI">
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QtQ-HJ-GaI">
                                 <rect key="frame" x="0.0" y="516" width="414" height="60"/>
                                 <subviews>
-                                    <textField opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Search for places to study" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pac-WK-Srj">
+                                    <textField opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for places to study" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pac-WK-Srj">
                                         <rect key="frame" x="32" y="10" width="350" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="D6J-mz-d3j"/>
