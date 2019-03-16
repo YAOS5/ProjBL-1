@@ -41,6 +41,12 @@ class ViewController: UIViewController, MKMapViewDelegate{
             self.view.layoutIfNeeded()
             self.cancelButton.isHidden = true
             self.cancelButton.isUserInteractionEnabled = false
+            
+            let filterCell = self.tableView.cellForRow(at: [0, 0])! as! FilterCell
+            filterCell.mainLabel.text = "Nearby"
+            filterCell.cafeButton.isHidden = true
+            filterCell.computerButton.isHidden = true
+            self.textFieldShouldReturn(self.searchBar)
         }
     }
     
@@ -174,7 +180,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 extension ViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.5) {
-            self.tableViewHeightConstraint.constant = 750
+            self.tableViewHeightConstraint.constant = 720
             // changing the appearence of thee search bar
             self.searchBarWidthConstraint.constant = 300
             self.cancelButton.isHidden = false

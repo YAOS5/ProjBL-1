@@ -13,6 +13,9 @@
         <array key="SF-Pro-Text-Heavy.otf">
             <string>SFProText-Heavy</string>
         </array>
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -24,35 +27,38 @@
                 <rect key="frame" x="0.0" y="0.0" width="295" height="83.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjK-8A-miG">
-                        <rect key="frame" x="147" y="11" width="30" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjK-8A-miG">
+                        <rect key="frame" x="171.5" y="17" width="35" height="33"/>
+                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                         <state key="normal" title="cafe"/>
                         <connections>
                             <action selector="cafeButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hiT-Ko-bbH"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ZI-kD-dTq">
-                        <rect key="frame" x="147" y="43" width="66" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nearby" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNk-tz-iCD">
+                        <rect key="frame" x="16" y="19" width="142.5" height="45.5"/>
+                        <fontDescription key="fontDescription" name="SFProText-Heavy" family="SF Pro Text" pointSize="38"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ZI-kD-dTq">
+                        <rect key="frame" x="171.5" y="50" width="74" height="33"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <state key="normal" title="computer"/>
                         <connections>
                             <action selector="computerButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eeq-ab-mB9"/>
                         </connections>
                     </button>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Near By" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNk-tz-iCD">
-                        <rect key="frame" x="14" y="12" width="195" height="60"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="60" id="HC9-d6-hGA"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="SFProText-Heavy" family="SF Pro Text" pointSize="48"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="JNk-tz-iCD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="03i-yD-8UA"/>
-                    <constraint firstItem="JNk-tz-iCD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bbm-u9-hYz"/>
+                    <constraint firstAttribute="trailing" secondItem="6ZI-kD-dTq" secondAttribute="trailing" constant="49.5" id="5FA-eo-pXB"/>
+                    <constraint firstItem="PjK-8A-miG" firstAttribute="leading" secondItem="JNk-tz-iCD" secondAttribute="trailing" constant="13" id="DGs-8c-SJQ"/>
+                    <constraint firstItem="JNk-tz-iCD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="N6x-vE-Vp9"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="PjK-8A-miG" secondAttribute="trailing" constant="72.5" id="X87-e1-rFy"/>
+                    <constraint firstItem="JNk-tz-iCD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Y7o-EN-Cf6"/>
+                    <constraint firstItem="PjK-8A-miG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="YaY-mD-OcZ"/>
+                    <constraint firstItem="6ZI-kD-dTq" firstAttribute="leading" secondItem="PjK-8A-miG" secondAttribute="leading" id="dqQ-nL-Vvs"/>
+                    <constraint firstItem="6ZI-kD-dTq" firstAttribute="top" secondItem="PjK-8A-miG" secondAttribute="bottom" id="mlj-yG-d9V"/>
                 </constraints>
             </tableViewCellContentView>
             <accessibility key="accessibilityConfiguration" identifier="FilterCell"/>
@@ -62,7 +68,7 @@
                 <outlet property="computerButton" destination="6ZI-kD-dTq" id="Ys2-nc-5Gf"/>
                 <outlet property="mainLabel" destination="JNk-tz-iCD" id="QBp-To-wWe"/>
             </connections>
-            <point key="canvasLocation" x="388" y="155.62218890554723"/>
+            <point key="canvasLocation" x="306" y="288"/>
         </tableViewCell>
     </objects>
 </document>
