@@ -120,7 +120,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUw-DT-KYe">
-                        <rect key="frame" x="254" y="15" width="50" height="50"/>
+                        <rect key="frame" x="245" y="15" width="50" height="50"/>
                         <color key="backgroundColor" red="0.17190376020000001" green="0.68163050520000001" blue="0.01331513017" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="6iL-PW-FuE"/>
@@ -148,7 +148,7 @@
                     <constraint firstItem="xaH-v4-753" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="GIk-6L-T2e"/>
                     <constraint firstItem="QEc-nM-3AJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="GtF-NT-X9R"/>
                     <constraint firstItem="eyI-A6-bpf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="JNj-1x-Dry"/>
-                    <constraint firstAttribute="trailing" secondItem="dUw-DT-KYe" secondAttribute="trailing" constant="16" id="K2B-X3-BAX"/>
+                    <constraint firstAttribute="trailing" secondItem="dUw-DT-KYe" secondAttribute="trailing" constant="25" id="K2B-X3-BAX"/>
                     <constraint firstItem="hOg-fT-zM2" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Kge-ke-f0y"/>
                     <constraint firstItem="QEc-nM-3AJ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ovm-4J-iWI"/>
                     <constraint firstAttribute="bottom" secondItem="3Hq-8q-ufc" secondAttribute="bottom" constant="5" id="R5h-dM-ea0"/>

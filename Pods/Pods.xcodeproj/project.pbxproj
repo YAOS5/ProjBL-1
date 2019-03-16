@@ -12,6 +12,10 @@
 		1FC3FD39157C2FFFF3869A1300730086 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332F6B9EA5D63A221428D82DFC754F83 /* SessionDelegate.swift */; };
 		30A1C79E2C76A3659891E9B27E57E7C0 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A6BCB8BFA44757C42826D92DE90E92 /* SwiftyJSON-dummy.m */; };
 		36FF8853CB34A9297AFAA8F5F7456324 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003F0620667B1D1CE3A63A07911DA946 /* TaskDelegate.swift */; };
+		43693199223D90EB0038B6DE /* restaurant.svg in Resources */ = {isa = PBXBuildFile; fileRef = 43693195223D90EB0038B6DE /* restaurant.svg */; };
+		4369319A223D90EB0038B6DE /* coins.svg in Resources */ = {isa = PBXBuildFile; fileRef = 43693196223D90EB0038B6DE /* coins.svg */; };
+		4369319B223D90EB0038B6DE /* monitor.svg in Resources */ = {isa = PBXBuildFile; fileRef = 43693197223D90EB0038B6DE /* monitor.svg */; };
+		4369319C223D90EB0038B6DE /* print.svg in Resources */ = {isa = PBXBuildFile; fileRef = 43693198223D90EB0038B6DE /* print.svg */; };
 		43AA6364D8F1659B84DFF098B17D3E19 /* Pods-ProjBL-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 284A69FD586C23D2D58434C9EED3049C /* Pods-ProjBL-dummy.m */; };
 		4E1A913EFB404FB11524718FF0298EFE /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26FB4343C43368E1D119B6871123AF1 /* Alamofire.swift */; };
 		500C8EDA60C07B0F127C7FC385E17D38 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09922B86810418CDE6DD69710D5A9C17 /* Notifications.swift */; };
@@ -65,6 +69,10 @@
 		4080C4841859B2CFB8E71FD3798066E8 /* Pods-ProjBL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ProjBL.debug.xcconfig"; sourceTree = "<group>"; };
 		40940641FEC544E01CEA2CF3E3D8CEA5 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
 		431F2436223D709100D65A5F /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		43693195223D90EB0038B6DE /* restaurant.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = restaurant.svg; sourceTree = "<group>"; };
+		43693196223D90EB0038B6DE /* coins.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = coins.svg; sourceTree = "<group>"; };
+		43693197223D90EB0038B6DE /* monitor.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = monitor.svg; sourceTree = "<group>"; };
+		43693198223D90EB0038B6DE /* print.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = print.svg; sourceTree = "<group>"; };
 		46F348C97B4691543272590A6CF72D80 /* Pods-ProjBL-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ProjBL-acknowledgements.markdown"; sourceTree = "<group>"; };
 		47A6BCB8BFA44757C42826D92DE90E92 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
 		4F7DC1E21DB2CFEB43E506E64D5B61D6 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
@@ -158,6 +166,17 @@
 			path = "Target Support Files/Pods-ProjBL";
 			sourceTree = "<group>";
 		};
+		43693194223D90EB0038B6DE /* Glyphs */ = {
+			isa = PBXGroup;
+			children = (
+				43693195223D90EB0038B6DE /* restaurant.svg */,
+				43693196223D90EB0038B6DE /* coins.svg */,
+				43693197223D90EB0038B6DE /* monitor.svg */,
+				43693198223D90EB0038B6DE /* print.svg */,
+			);
+			path = Glyphs;
+			sourceTree = "<group>";
+		};
 		44D5347904CF754D6785B84253F2574A /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +202,7 @@
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
+				43693194223D90EB0038B6DE /* Glyphs */,
 				431F2436223D709100D65A5F /* SF-Pro-Text-Regular.otf */,
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
@@ -391,6 +411,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4369319C223D90EB0038B6DE /* print.svg in Resources */,
+				4369319B223D90EB0038B6DE /* monitor.svg in Resources */,
+				43693199223D90EB0038B6DE /* restaurant.svg in Resources */,
+				4369319A223D90EB0038B6DE /* coins.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
