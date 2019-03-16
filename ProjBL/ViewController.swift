@@ -31,6 +31,19 @@ class ViewController: UIViewController, MKMapViewDelegate{
     @IBOutlet weak var searchBar: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var searchBarWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var cancelButton: UIButton!
+    
+    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.5) {
+            self.tableViewHeightConstraint.constant = 300
+            self.searchBarWidthConstraint.constant = 373
+            self.view.layoutIfNeeded()
+            self.cancelButton.isHidden = true
+            self.cancelButton.isUserInteractionEnabled = false
+        }
+    }
+    
     
     
     let locationManager = CLLocationManager()
@@ -54,6 +67,9 @@ class ViewController: UIViewController, MKMapViewDelegate{
         let FilterCell = UINib(nibName: "FilterCell", bundle: nil)
         tableView.register(FilterCell, forCellReuseIdentifier: "FilterCell")
         
+        // configuring the cancel button
+        cancelButton.isHidden = true
+        cancelButton.isUserInteractionEnabled = false
         
         if CLLocationManager.locationServicesEnabled() {
             setUpLocationManager()
@@ -159,6 +175,10 @@ extension ViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.5) {
             self.tableViewHeightConstraint.constant = 750
+            // changing the appearence of thee search bar
+            self.searchBarWidthConstraint.constant = 300
+            self.cancelButton.isHidden = false
+            self.cancelButton.isUserInteractionEnabled = true
             self.view.layoutIfNeeded()
             let filterCell = self.tableView.cellForRow(at: [0, 0])! as! FilterCell
             filterCell.changeToFilter()

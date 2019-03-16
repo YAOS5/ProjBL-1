@@ -47,7 +47,7 @@
                         <attributedString key="attributedText">
                             <fragment content="123 m">
                                 <attributes>
-                                    <font key="NSFont" size="12" name="SFProText-Regular"/>
+                                    <font key="NSFont" metaFont="cellTitle"/>
                                 </attributes>
                             </fragment>
                         </attributedString>
@@ -97,7 +97,7 @@
                         <attributedString key="attributedText">
                             <fragment content="12 min">
                                 <attributes>
-                                    <font key="NSFont" size="12" name="SFProText-Regular"/>
+                                    <font key="NSFont" metaFont="cellTitle"/>
                                 </attributes>
                             </fragment>
                         </attributedString>
@@ -112,7 +112,7 @@
                         <attributedString key="attributedText">
                             <fragment content="Very Busy">
                                 <attributes>
-                                    <font key="NSFont" size="12" name="SFProText-Regular"/>
+                                    <font key="NSFont" metaFont="cellTitle"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>

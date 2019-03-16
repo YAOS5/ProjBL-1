@@ -39,10 +39,10 @@
                                 <rect key="frame" x="0.0" y="516" width="414" height="60"/>
                                 <subviews>
                                     <textField opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for places to study" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pac-WK-Srj">
-                                        <rect key="frame" x="32" y="10" width="350" height="40"/>
+                                        <rect key="frame" x="16" y="10" width="373" height="40"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="373" id="80u-IZ-F71"/>
                                             <constraint firstAttribute="height" constant="40" id="D6J-mz-d3j"/>
-                                            <constraint firstAttribute="width" constant="350" id="Q7b-bS-8L8"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -56,12 +56,22 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="3yE-TR-rUG"/>
                                         </connections>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhG-n7-db0">
+                                        <rect key="frame" x="399" y="15" width="5" height="30"/>
+                                        <state key="normal" title="cancel"/>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y78-yf-JCj"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Pac-WK-Srj" firstAttribute="centerX" secondItem="QtQ-HJ-GaI" secondAttribute="centerX" id="91v-mg-O7R"/>
+                                    <constraint firstItem="HhG-n7-db0" firstAttribute="centerY" secondItem="QtQ-HJ-GaI" secondAttribute="centerY" id="Jlz-1R-pu8"/>
+                                    <constraint firstAttribute="trailing" secondItem="HhG-n7-db0" secondAttribute="trailing" constant="10" id="N6i-vy-P6h"/>
+                                    <constraint firstItem="Pac-WK-Srj" firstAttribute="leading" secondItem="QtQ-HJ-GaI" secondAttribute="leading" constant="16" id="OxX-KT-3Pb"/>
                                     <constraint firstItem="Pac-WK-Srj" firstAttribute="centerY" secondItem="QtQ-HJ-GaI" secondAttribute="centerY" id="QZ8-AC-71Y"/>
                                     <constraint firstAttribute="height" constant="60" id="Rar-qR-BKp"/>
+                                    <constraint firstItem="HhG-n7-db0" firstAttribute="leading" secondItem="Pac-WK-Srj" secondAttribute="trailing" constant="10" id="VBR-Yx-yDu"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -81,8 +91,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="HhG-n7-db0" id="IWM-WP-QKJ"/>
                         <outlet property="map" destination="oA6-iP-b7X" id="oKG-b6-KFQ"/>
                         <outlet property="searchBar" destination="Pac-WK-Srj" id="eEA-fh-M1r"/>
+                        <outlet property="searchBarWidthConstraint" destination="80u-IZ-F71" id="nmg-sI-lBb"/>
                         <outlet property="tableView" destination="XoT-ik-OEi" id="YZg-HX-9rf"/>
                         <outlet property="tableViewHeightConstraint" destination="hgD-KU-wlD" id="Gi9-O1-l7r"/>
                     </connections>
