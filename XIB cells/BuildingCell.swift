@@ -8,12 +8,16 @@
 
 import UIKit
 
+protocol plotPloylineDelegate {
+    func getInfoAndPlotPloyline(buildingName: String)
+}
+
 class BuildingCell: UITableViewCell {
     
     @IBOutlet weak var libraryName: UILabel!
     @IBOutlet weak var walkingMinutes: UILabel!
     @IBOutlet weak var walkingMeters: UILabel!
-    
+    var delegate : plotPloylineDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +32,7 @@ class BuildingCell: UITableViewCell {
     }
     
     @IBAction func directionButtonPressed(_ sender: UIButton) {
-        let viewController = ViewController()
-//        viewController.plotDirectionsTo(destName: libraryName.text!, lat: ?, long: ?)
+        let buildingName = libraryName.text!
+        delegate?.getInfoAndPlotPloyline(buildingName: buildingName)
     }
 }

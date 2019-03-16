@@ -26,6 +26,8 @@ class customPin: NSObject, MKAnnotation {
 
 class ViewController: UIViewController, MKMapViewDelegate{
     
+    var coor: CLLocationCoordinate2D?
+
     
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var searchBar: UITextField!
@@ -143,7 +145,11 @@ extension ViewController {
 extension ViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print(manager.location?.coordinate)
+        if locations[locations.count - 1].horizontalAccuracy >= 0 {
+            coor = locations[locations.count - 1].coordinate
+            manager.stopUpdatingLocation()
+        }
+//        manager.location?.coordinate
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -158,7 +164,11 @@ extension ViewController: CLLocationManagerDelegate {
 }
 
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension ViewController: UITableViewDelegate, UITableViewDataSource, plotPloylineDelegate {
+    func getInfoAndPlotPloyline(buildingName: String) {
+        plotDirectionsTo(destName: buildingName, lat: coor!.latitude, long: coor!.longitude)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {   
         return 3
     }
@@ -169,6 +179,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "BuildingCell", for: indexPath) as! BuildingCell
+        cell.delegate = self
         return cell
     }
     
