@@ -25,14 +25,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyI-A6-bpf">
-                        <rect key="frame" x="16" y="10" width="146.5" height="20"/>
+                        <rect key="frame" x="16" y="10" width="126.5" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="PYI-8C-P2h"/>
                         </constraints>
                         <attributedString key="attributedText">
                             <fragment content="Library Name">
                                 <attributes>
-                                    <font key="NSFont" size="21" name="SFProText-Heavy"/>
+                                    <font key="NSFont" metaFont="system" size="21"/>
                                 </attributes>
                             </fragment>
                         </attributedString>

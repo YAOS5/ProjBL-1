@@ -10,6 +10,9 @@ import UIKit
 import MapKit
 import CoreLocation
 import SwiftyJSON
+import Foundation
+import Alamofire
+import SwiftyJSON
 
 class customPin: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
@@ -28,7 +31,7 @@ class ViewController: UIViewController, MKMapViewDelegate{
     
     var coor: CLLocationCoordinate2D?
     var json = JSON()
-    
+
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var searchBar: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -139,19 +142,47 @@ extension ViewController {
 
 }
 
+let urlString = "https://572g8um8v0.execute-api.us-east-1.amazonaws.com/dev/getvenueinfo"
 
+func getJSON(lat: CLLocationDegrees, long: CLLocationDegrees) -> JSON{
+    var json = JSON()
+    Alamofire.request(urlString, method: .post, parameters: ["lat": Double(lat), "long": Double(long)], encoding: JSONEncoding.default, headers: nil).responseJSON {
+        response in
+        switch response.result {
+        case .success:
+            json = JSON(response.result.value!)
+            print(json)
+        case .failure(let error):
+            print(error)
+        }
+    }
+    return json
+}
 
 
 extension ViewController: CLLocationManagerDelegate {
     
 
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if locations[locations.count - 1].horizontalAccuracy >= 0 {
             coor = locations[locations.count - 1].coordinate
-            json = getJSON(lat: coor!.latitude, long: coor!.longitude)
-            manager.stopUpdatingLocation()
+            print(Double(coor!.latitude), Double(coor!.longitude))
+            let lat = coor!.latitude
+            let long = coor!.longitude
+            Alamofire.request(urlString, method: .post, parameters: ["lat": Double(lat), "long": Double(long)], encoding: JSONEncoding.default, headers: nil).responseJSON {
+                response in
+                switch response.result {
+                case .success:
+                    self.json = JSON(response.result.value!)
+                    print("Json: ", self.json)
+                    manager.stopUpdatingLocation()
+                case .failure(let error):
+                    print(error)
+                }
+            }
+            
         }
-//        manager.location?.coordinate
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -175,7 +206,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, plotPloyli
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {   
-        return json["buildings"].count + 1
+        return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -184,9 +215,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, plotPloyli
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "BuildingCell", for: indexPath) as! BuildingCell
-        cell.libraryName.text = json["buildings"][indexPath.row]["buildingName"].string
-        cell.walkingMeters.text = json["buildings"][indexPath.row]["distance"].string! + "m"
-        cell.walkingMinutes.text = json["buildings"][indexPath.row]["time"].string! + "min"
         cell.delegate = self
         return cell
     }
