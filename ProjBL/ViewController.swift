@@ -168,14 +168,17 @@ extension ViewController: CLLocationManagerDelegate {
         if locations[locations.count - 1].horizontalAccuracy >= 0 {
             coor = locations[locations.count - 1].coordinate
             print(Double(coor!.latitude), Double(coor!.longitude))
-            let lat = coor!.latitude
-            let long = coor!.longitude
+            let lat = -37.7984
+            let long = 144.9594
+            
+//            let lat = coor!.latitude
+//            let long = coor!.longitude
             Alamofire.request(urlString, method: .post, parameters: ["lat": Double(lat), "long": Double(long)], encoding: JSONEncoding.default, headers: nil).responseJSON {
                 response in
                 switch response.result {
                 case .success:
                     self.json = JSON(response.result.value!)
-                    print("Json: ", self.json)
+                    print("json: ", self.json)
                     manager.stopUpdatingLocation()
                 case .failure(let error):
                     print(error)
@@ -206,7 +209,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, plotPloyli
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {   
-        return 20
+        return self.json["buildings"].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
