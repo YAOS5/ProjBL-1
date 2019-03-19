@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00A88007223F9CDC00736AB4 /* studySpaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A88006223F9CDC00736AB4 /* studySpaceModel.swift */; };
+		00A8800A223F9E8E00736AB4 /* studySpaceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A88009223F9E8E00736AB4 /* studySpaceAPI.swift */; };
 		43693191223D7BDA0038B6DE /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4369318E223D7BDA0038B6DE /* SF-Pro-Text-Heavy.otf */; };
 		43693192223D7BDA0038B6DE /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4369318F223D7BDA0038B6DE /* SF-Pro-Display-Regular.otf */; };
 		43693193223D7BDA0038B6DE /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 43693190223D7BDA0038B6DE /* SF-Pro-Text-Bold.otf */; };
@@ -37,13 +39,15 @@
 		4918FD18223D1307006FC76D /* BuildingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4918FD16223D1307006FC76D /* BuildingCell.xib */; };
 		4981A6F0223D36B200A2DEE7 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981A6EE223D36B200A2DEE7 /* FilterCell.swift */; };
 		4981A6F1223D36B200A2DEE7 /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4981A6EF223D36B200A2DEE7 /* FilterCell.xib */; };
-		4981A6F3223D5A1200A2DEE7 /* jsonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981A6F2223D5A1100A2DEE7 /* jsonAPI.swift */; };
+		4981A6F3223D5A1200A2DEE7 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981A6F2223D5A1100A2DEE7 /* API.swift */; };
 		4981A6F5223D5DC100A2DEE7 /* retractKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981A6F4223D5DC000A2DEE7 /* retractKeyboard.swift */; };
 		4981A6F7223D695700A2DEE7 /* textFieldButtonAppearence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981A6F6223D695700A2DEE7 /* textFieldButtonAppearence.swift */; };
 		8242437FA395C1F0B688C532 /* Pods_ProjBL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7ACD51C1B42D2FD275B97C6 /* Pods_ProjBL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00A88006223F9CDC00736AB4 /* studySpaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = studySpaceModel.swift; sourceTree = "<group>"; };
+		00A88009223F9E8E00736AB4 /* studySpaceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = studySpaceAPI.swift; sourceTree = "<group>"; };
 		4338B8C3223D6EA6003CDE10 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = "/Users/danielye/Documents/GitHub/ProjBL-1/ProjBL/fonts"; sourceTree = "<absolute>"; };
 		4369318E223D7BDA0038B6DE /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
 		4369318F223D7BDA0038B6DE /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
@@ -78,7 +82,7 @@
 		491C16B27CC911D6E039C8AE /* Pods-ProjBL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjBL.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjBL/Pods-ProjBL.release.xcconfig"; sourceTree = "<group>"; };
 		4981A6EE223D36B200A2DEE7 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		4981A6EF223D36B200A2DEE7 /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
-		4981A6F2223D5A1100A2DEE7 /* jsonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsonAPI.swift; sourceTree = "<group>"; };
+		4981A6F2223D5A1100A2DEE7 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		4981A6F4223D5DC000A2DEE7 /* retractKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = retractKeyboard.swift; sourceTree = "<group>"; };
 		4981A6F6223D695700A2DEE7 /* textFieldButtonAppearence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textFieldButtonAppearence.swift; sourceTree = "<group>"; };
 		BEE276C22111445439076BC2 /* Pods-ProjBL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjBL.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjBL/Pods-ProjBL.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +101,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00A88005223F9C9D00736AB4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				00A88006223F9CDC00736AB4 /* studySpaceModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		00A88008223F9E6600736AB4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4981A6F2223D5A1100A2DEE7 /* API.swift */,
+				00A88009223F9E8E00736AB4 /* studySpaceAPI.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		4369318D223D7BC00038B6DE /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,7 +190,8 @@
 				4918FD05223CE12A006FC76D /* Assets.xcassets */,
 				4918FD07223CE12A006FC76D /* LaunchScreen.storyboard */,
 				4918FD0A223CE12A006FC76D /* Info.plist */,
-				4981A6F2223D5A1100A2DEE7 /* jsonAPI.swift */,
+				00A88008223F9E6600736AB4 /* Data */,
+				00A88005223F9C9D00736AB4 /* Model */,
 				4981A6F4223D5DC000A2DEE7 /* retractKeyboard.swift */,
 				4981A6F6223D695700A2DEE7 /* textFieldButtonAppearence.swift */,
 				4338B8C3223D6EA6003CDE10 /* fonts */,
@@ -351,13 +373,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00A8800A223F9E8E00736AB4 /* studySpaceAPI.swift in Sources */,
 				4918FD01223CE127006FC76D /* ViewController.swift in Sources */,
 				4918FD13223D0F9F006FC76D /* SearchCell.swift in Sources */,
 				4981A6F5223D5DC100A2DEE7 /* retractKeyboard.swift in Sources */,
 				4981A6F7223D695700A2DEE7 /* textFieldButtonAppearence.swift in Sources */,
 				4918FCFF223CE127006FC76D /* AppDelegate.swift in Sources */,
 				4918FD17223D1307006FC76D /* BuildingCell.swift in Sources */,
-				4981A6F3223D5A1200A2DEE7 /* jsonAPI.swift in Sources */,
+				4981A6F3223D5A1200A2DEE7 /* API.swift in Sources */,
+				00A88007223F9CDC00736AB4 /* studySpaceModel.swift in Sources */,
 				4981A6F0223D36B200A2DEE7 /* FilterCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

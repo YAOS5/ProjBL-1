@@ -9,10 +9,11 @@
 import UIKit
 import MapKit
 import CoreLocation
-import SwiftyJSON
 import Foundation
 import Alamofire
 import SwiftyJSON
+
+let chaliceUrl = "https://4132052exb.execute-api.us-east-1.amazonaws.com/api/getstudyspace"
 
 class customPin: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
@@ -20,9 +21,9 @@ class customPin: NSObject, MKAnnotation {
     var subtitle: String?
     
     init(pinTitle:String, pinSubTitle:String, location:CLLocationCoordinate2D) {
+        self.coordinate = location
         self.title = pinTitle
         self.subtitle = pinSubTitle
-        self.coordinate = location
     }
 }
 
@@ -30,7 +31,7 @@ class customPin: NSObject, MKAnnotation {
 class ViewController: UIViewController, MKMapViewDelegate{
     
     var coor: CLLocationCoordinate2D?
-    var json = JSON()
+    var buildings: [String:Any]?
 
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var searchBar: UITextField!
@@ -39,22 +40,46 @@ class ViewController: UIViewController, MKMapViewDelegate{
     @IBOutlet weak var searchBarWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var cancelButton: UIButton!
     
+    
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
         UIView.animate(withDuration: 0.5) {
+            //MARK: what do these constants mean?
             self.tableViewHeightConstraint.constant = 300
             self.searchBarWidthConstraint.constant = 373
             self.view.layoutIfNeeded()
             self.cancelButton.isHidden = true
             self.cancelButton.isUserInteractionEnabled = false
             
-            let filterCell = self.tableView.cellForRow(at: [0, 0])! as! FilterCell
-            filterCell.mainLabel.text = "Nearby"
-            filterCell.cafeButton.isHidden = true
-            filterCell.computerButton.isHidden = true
-            self.textFieldShouldReturn(self.searchBar)
+            if let tableViewCell = self.tableView.cellForRow(at: [0, 0]) {
+                if let filterCell = tableViewCell as? FilterCell {
+                    filterCell.mainLabel.text = "Nearby"
+                    filterCell.cafeButton.isHidden = true
+                    filterCell.computerButton.isHidden = true
+                    self.textFieldShouldReturn(self.searchBar)
+                    self.tableView.reloadData()
+                } else {
+                    print("ERROR: downcast from TableViewCell to FilterCell failed")
+                }
+            } else {
+                print("ERROR: invalid cellForRow")
+            }
+            
         }
     }
     
+    func getStudySpaceData(postUrl url: String, latitude lat: Double, longitude long: Double) {
+        //MARK: Call API with post request
+        let params = ["lat": lat, "long": long]
+        postAPIRequest(url: url, params: params) { data in
+            if let json = data {
+                DispatchQueue.main.async {
+                    self.buildings = json.dictionaryObject! as [String : Any]
+                }
+            } else {
+                print("API request returned error")
+            }
+        }
+    }
     
     
     let locationManager = CLLocationManager()
@@ -142,43 +167,24 @@ extension ViewController {
 
 }
 
-let urlString = "https://572g8um8v0.execute-api.us-east-1.amazonaws.com/dev/getvenueinfo"
-
-func getJSON(lat: CLLocationDegrees, long: CLLocationDegrees) -> JSON{
-    var json = JSON()
-    Alamofire.request(urlString, method: .post, parameters: ["lat": Double(lat), "long": Double(long)], encoding: JSONEncoding.default, headers: nil).responseJSON {
-        response in
-        switch response.result {
-        case .success:
-            json = JSON(response.result.value!)
-            print(json)
-        case .failure(let error):
-            print(error)
-        }
-    }
-    return json
-}
-
-
 extension ViewController: CLLocationManagerDelegate {
-    
-
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if locations[locations.count - 1].horizontalAccuracy >= 0 {
             coor = locations[locations.count - 1].coordinate
+            manager.stopUpdatingLocation()
             print(Double(coor!.latitude), Double(coor!.longitude))
-            let lat = -37.7984
-            let long = 144.9594
-            
+            let lat = -37.796773
+            let long = 144.964456
+
 //            let lat = coor!.latitude
 //            let long = coor!.longitude
-            Alamofire.request(urlString, method: .post, parameters: ["lat": Double(lat), "long": Double(long)], encoding: JSONEncoding.default, headers: nil).responseJSON {
+            Alamofire.request(chaliceUrl, method: .post, parameters: ["lat": Double(lat), "long": Double(long)], encoding: JSONEncoding.default, headers: nil).responseJSON {
                 response in
                 switch response.result {
                 case .success:
-                    self.json = JSON(response.result.value!)
-                    print("json: ", self.json)
+                    self.buildings = JSON(response.result.value!).dictionaryObject! as [String : Any]
+                    print(self.buildings)
                     manager.stopUpdatingLocation()
                 case .failure(let error):
                     print(error)
@@ -209,7 +215,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, plotPloyli
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {   
-        return self.json["buildings"].count
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -218,8 +224,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, plotPloyli
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "BuildingCell", for: indexPath) as! BuildingCell
-        cell.delegate = self
-        return cell
+        print("catch")
+        if self.buildings != nil {
+            let building = self.buildings!["buildings"] as! [[String: Any]]
+            print("buildding", building)
+            cell.walkingMeters.text = building[0]["distance"] as! String?
+            cell.walkingMinutes.text = building[0]["time"] as! String?
+            cell.delegate = self
+            return cell
+        } else {
+            print("ERROR")
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
